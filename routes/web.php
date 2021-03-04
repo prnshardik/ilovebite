@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function(){ return redirect()->route('home'); });
+
+Route::group(['middleware' => ['prevent-back-history']], function(){
+    Route::get('home', 'HomeController@index')->name('home');
 });
