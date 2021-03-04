@@ -6,4 +6,10 @@
         }
     }
 
+    if(!function_exists('_site_name_sm')){
+        function _site_name_sm(){
+            return 'HL';
+        }
+    }
+
 ?>
