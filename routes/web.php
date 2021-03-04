@@ -13,10 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('admin', function(){ return redirect()->route('home'); });
+Route::get('/', function(){ return redirect()->route('home'); });
 
 Route::group(['middleware' => ['prevent-back-history']], function(){
-    Route::group(['prefix' => 'admin'], function(){
-        Route::get('home', 'HomeController@index')->name('home');
-    });
+    Route::get('home', 'HomeController@index')->name('home');
 });
